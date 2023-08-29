@@ -10728,6 +10728,12 @@ header {
   display: flex;
   justify-content: space-between;
 }
+@media (max-width: 991.98px) {
+  header {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
 header nav ul {
   background-color: rgb(248, 223, 190);
   display: flex;
@@ -10739,7 +10745,7 @@ header nav ul {
   height: 100vh;
   width: 10vw;
 }
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
   header nav ul {
     flex-direction: row;
     height: 10vw;
@@ -10759,7 +10765,8 @@ header nav ul li a {
 header nav ul a:hover {
   font-size: 2.4rem;
   color: rgba(51, 2, 112, 0.765);
-  padding: 0.8rem;
+  padding: 1.2rem;
+  border-bottom: 3px solid rgba(99, 2, 134, 0.913);
   border-radius: 50px;
   box-shadow: 0px 0px 15px rgba(51, 2, 112, 0.765);
 }
@@ -10769,6 +10776,13 @@ header .sec-1 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+@media (max-width: 991.98px) {
+  header .sec-1 {
+    height: fit-content;
+    margin: 15rem 0;
+    justify-content: flex-start;
+  }
 }
 header .sec-1 h1, header .sec-1 .h1,
 header .sec-1 h2,
@@ -10795,7 +10809,15 @@ header .link {
   justify-content: space-evenly;
   font-size: 10rem;
   flex-direction: column;
-  margin-right: 5rem;
+  margin-right: 10rem;
+}
+@media (max-width: 991.98px) {
+  header .link {
+    flex-direction: row;
+    font-size: 5rem;
+    align-items: center;
+    margin-right: 0;
+  }
 }
 header .link i {
   transition-duration: 1s;
@@ -10810,15 +10832,28 @@ header .link i:hover {
   0% {
     transform: scale(0.8);
   }
-  100% {
+  50% {
     transform: scale(1.1);
   }
+  100% {
+    transform: scale(0.8);
+  }
+}
+main section {
+  padding-top: 7rem;
+}
+main h2, main .h2 {
+  font-size: clamp(3rem, 6vw, 6rem);
+  margin: 0;
+  color: rgba(99, 2, 134, 0.913);
+  font-family: "Kaushan Script";
+  text-transform: uppercase;
 }
 main p {
   font-family: "Miniver";
   text-align: center;
-  font-size: 2rem;
-  color: gray;
+  font-size: 2.2rem;
+  color: rgb(64, 59, 59);
 }
 main h3, main .h3 {
   font-size: clamp(2.8rem, 5vw, 5rem);
@@ -10831,13 +10866,15 @@ main h3, main .h3 {
   padding: 0;
 }
 main #about {
-  height: 100vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: start;
   flex-direction: row;
-  padding-top: 5rem;
+}
+main #about .info {
+  border-right: 2px solid rgba(186, 174, 174, 0.532);
+  padding-right: 6.9%;
 }
 main #about .info h2, main #about .info .h2,
 main #about .info h3,
@@ -10851,20 +10888,13 @@ main #about .info .skill {
   margin-left: 10vw;
   text-align: center;
 }
-main #about .info h2, main #about .info .h2 {
-  font-size: clamp(3rem, 6vw, 6rem);
-  margin: 0;
-  color: rgba(99, 2, 134, 0.913);
-  font-family: "Kaushan Script";
-  text-transform: uppercase;
-}
-main #about .info h3::after, main #about .info .h3::after {
+main #about .info .edu::after {
   content: "";
   height: 20px;
   width: 20px;
-  display: inline-block;
+  display: block;
   position: relative;
-  left: 60%;
+  left: 115%;
   border-radius: 50%;
   background-color: rgba(99, 2, 134, 0.913);
 }
@@ -10877,25 +10907,8 @@ main #about .info h4, main #about .info .h4 {
 main #about .info h4 span, main #about .info .h4 span {
   text-decoration: underline;
 }
-main #about .info p {
-  color: gray;
-  font-size: 2rem;
-  font-family: "Miniver";
-}
 main #about .info .skill-h {
-  margin: auto;
-}
-main #about .info .skill {
-  width: 250px;
-  height: 20px;
-  border-radius: 50px;
-  position: relative;
-  left: 280px;
-  top: -30px;
-  background: linear-gradient(90deg, rgba(77, 2, 106, 0.913) 95%, rgba(47, 2, 87, 0.414) 5%);
-}
-main #about .info .java {
-  background: linear-gradient(90deg, rgba(77, 2, 106, 0.913) 0%, rgba(47, 2, 87, 0.626) 10%, rgba(47, 2, 87, 0.414) 90%);
+  text-align: center;
 }
 main #about .profile {
   height: 35vh;
@@ -10917,12 +10930,159 @@ main .about-me {
   text-align: justify;
   position: absolute;
   right: 100px;
-  top: 140%;
+  top: 135%;
 }
 @media (max-width: 767.98px) {
   main .about-me {
     display: block;
   }
+}
+main #project {
+  height: 100vh;
+  margin-left: 11vw;
+}
+main #project p {
+  color: rgb(64, 59, 59);
+  font-size: 2rem;
+  font-family: "Miniver";
+}
+main #project .project-sec {
+  height: 50vh;
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  gap: 5rem;
+}
+main #project .project-sec .click h4, main #project .project-sec .click .h4 {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Miniver";
+  font-size: 3rem;
+}
+main #project .project-sec .click .cover-dis {
+  height: 37.8rem;
+  width: 35rem;
+  background-color: rgba(8, 8, 8, 0.632);
+  position: absolute;
+  opacity: 1;
+  transition-duration: 1s;
+  color: snow;
+  z-index: 1;
+}
+main #project .project-sec .click a {
+  text-decoration: none;
+}
+main #project .project-sec .click .card {
+  border: 4px double rgb(64, 59, 59);
+  transition-duration: 1s;
+}
+main #project .project-sec .click .card .card-body {
+  background-color: rgb(248, 223, 190);
+}
+main #project .project-sec .click .card .card-body h5, main #project .project-sec .click .card .card-body .h5 {
+  font-size: 2rem;
+  color: rgba(99, 2, 134, 0.913);
+  font-family: "Cookie";
+}
+main #project .click:hover .cover-dis {
+  opacity: 0;
+  cursor: pointer;
+}
+main #project .click:hover .card {
+  transform: rotate(5deg) scale(0.9);
+  color: rgb(82, 24, 24);
+  transition-delay: 0.1s;
+}
+
+footer {
+  margin-left: 11vw;
+}
+footer h2, footer .h2 {
+  font-size: clamp(3rem, 6vw, 6rem);
+  margin: 0;
+  color: rgba(99, 2, 134, 0.913);
+  font-family: "Kaushan Script";
+  text-transform: uppercase;
+  text-align: center;
+}
+footer #contact {
+  height: 100vh;
+  padding-top: 5rem;
+}
+footer #contact .contact-sec {
+  display: flex;
+  justify-content: space-around;
+  align-items: end;
+}
+footer #contact .contact-sec .form form {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+footer #contact .contact-sec .form form label {
+  color: rgba(99, 2, 134, 0.913);
+  font-family: "Kaushan Script";
+  font-size: 3rem;
+}
+footer #contact .contact-sec .form form input, footer #contact .contact-sec .form form textarea {
+  width: 100%;
+  background-color: rgba(251, 239, 216, 0.721);
+}
+footer #contact .contact-sec .form form input:focus,
+footer #contact .contact-sec .form form textarea:focus {
+  outline-color: rgba(99, 2, 134, 0.913);
+}
+footer #contact .contact-sec .form form button {
+  margin: 1rem;
+  padding: 1rem 2rem;
+  color: rgba(99, 2, 134, 0.913);
+  font-size: 3rem;
+  font-family: "Kaushan Script";
+  border-radius: 50px;
+  border: none;
+  background-color: rgba(47, 2, 87, 0.414);
+  transition-duration: 1s;
+}
+footer #contact .contact-sec .form form button:hover {
+  transform: scale(1.1);
+  background-color: rgba(186, 174, 174, 0.532);
+  cursor: pointer;
+}
+footer #contact .contact-sec .contact-icon div {
+  height: 20rem;
+  width: 20rem;
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px grey;
+}
+footer #contact .contact-sec .contact-icon div h4, footer #contact .contact-sec .contact-icon div .h4 {
+  color: rgba(99, 2, 134, 0.913);
+  font-family: "Kaushan Script";
+  font-size: 2rem;
+}
+footer #contact .contact-sec .contact-icon div i {
+  font-size: 5rem;
+  color: rgba(99, 2, 134, 0.913);
+}
+footer #contact .contact-sec .icon:hover i {
+  color: rgba(186, 174, 174, 0.532);
+}
+
+.up i {
+  position: sticky;
+  left: 3%;
+  bottom: 1%;
+  font-size: 4rem;
+  color: rgba(99, 2, 134, 0.913);
 }
 
 /*# sourceMappingURL=main.css.map */

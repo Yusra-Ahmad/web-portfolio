@@ -6,13 +6,19 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 @import "./base";
-@import "./minmix";
+@import "./mixin";
 @import url("https://fonts.googleapis.com/css2?family=Cookie&family=Fredericka+the+Great&family=Kaushan+Script&family=Love+Ya+Like+A+Sister&family=Maven+Pro:wght@400;500;600;800;900&family=Miniver&family=Niconne&family=Rubik+Moonrocks&display=swap");
 
 // HOME PAGE
-header{
+header {
   display: flex;
   justify-content: space-between;
+  @include media-breakpoint-down(lg){
+    flex-direction: column;
+    justify-content: center;
+  }
+
+
   nav ul {
     background-color: $navbackground;
     display: flex;
@@ -23,26 +29,27 @@ header{
     position: fixed;
     height: 100vh;
     width: 10vw;
-    @include media-breakpoint-down(md) { 
+    @include media-breakpoint-down(lg) {
       flex-direction: row;
       height: 10vw;
       width: 100%;
-     }
+    }
     li {
       list-style: none;
-  
+
       a {
         font-size: clamp(1rem, 4vw, 2.2rem);
         color: gray;
         font-family: "Miniver";
         text-decoration: none;
-        transition-duration: .5s;
+        transition-duration: 0.5s;
       }
     }
     a:hover {
       font-size: 2.4rem;
       color: rgba(51, 2, 112, 0.765);
-      padding: 0.8rem;
+      padding: 1.2rem;
+      border-bottom: 3px solid $heading;
       border-radius: 50px;
       box-shadow: 0px 0px 15px rgba(51, 2, 112, 0.765);
     }
@@ -53,6 +60,12 @@ header{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    @include media-breakpoint-down(lg){
+      height: fit-content;
+      margin: 15rem 0;
+      justify-content: flex-start;
+  
+    }
     h1,
     h2 {
       margin: 0;
@@ -73,41 +86,62 @@ header{
     }
   }
   .link {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
     font-size: 10rem;
     flex-direction: column;
-    margin-right: 5rem;
-    
-    i{
+    margin-right: 10rem;
+    @include media-breakpoint-down(lg){
+      flex-direction: row;
+      font-size: 5rem;
+      align-items: center;
+      margin-right: 0;
+     
+    }
+    i {
       transition-duration: 1s;
       animation: zoomout 5s infinite;
       color: $heading;
-
     }
-    i:hover{
+    i:hover {
       color: grey;
     }
   }
 }
-@keyframes zoomout{
-0% {
-  transform: scale(0.8);
+@keyframes zoomout {
+  0% {
+    transform: scale(0.8);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(0.8);
+  }
 }
 
-100%{
-  transform: scale(1.1);
-}
-}
 
 
 main {
+  section {
+    padding-top: 7rem;
+    
+  }
+  h2 {
+    font-size: clamp(3rem, 6vw, 6rem);
+    margin: 0;
+    color: $heading;
+    font-family: "Kaushan Script";
+    text-transform: uppercase;
+  }
   p {
     font-family: "Miniver";
     text-align: center;
-    font-size: 2rem;
-    color: gray;
+    font-size: 2.2rem;
+    color: $fontcolor;
   }
   // Yusra's About Page
   h3 {
@@ -121,15 +155,16 @@ main {
     padding: 0;
   }
   #about {
-    height: 100vh;
+    
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: start;
     flex-direction: row;
-    padding-top: 5rem;
 
     .info {
+      border-right: 2px solid $centerborder;
+      padding-right: 6.9%;
       h2,
       h3,
       h4,
@@ -140,21 +175,13 @@ main {
         text-align: center;
       }
 
-      h2 {
-        font-size: clamp(3rem, 6vw, 6rem);
-        margin: 0;
-        color: $heading;
-        font-family: "Kaushan Script";
-        text-transform: uppercase;
-      }
-
-      h3::after {
+      .edu::after {
         content: "";
         height: 20px;
         width: 20px;
-        display: inline-block;
+        display: block;
         position: relative;
-        left: 60%;
+        left: 115%;
         border-radius: 50%;
         background-color: $heading;
       }
@@ -168,36 +195,11 @@ main {
           text-decoration: underline;
         }
       }
-      p {
-        color: gray;
-        font-size: 2rem;
-        font-family: "Miniver";
-      }
+      
       .skill-h {
-        margin: auto;
+        text-align: center;
       }
-      .skill {
-        width: 250px;
-        height: 20px;
-        border-radius: 50px;
-        position: relative;
-        left: 280px;
-        top: -30px;
-        background: linear-gradient(
-          90deg,
-          rgba(77, 2, 106, 0.913) 95%,
-
-          rgba(47, 2, 87, 0.414) 5%
-        );
-      }
-      .java {
-        background: linear-gradient(
-          90deg,
-          rgba(77, 2, 106, 0.913) 0%,
-          rgba(47, 2, 87, 0.626) 10%,
-          rgba(47, 2, 87, 0.414) 90%
-        );
-      }
+      
     }
 
     .profile {
@@ -222,12 +224,179 @@ main {
     text-align: justify;
     position: absolute;
     right: 100px;
-    top: 140%;
-    @include media-breakpoint-down(md){
+    top: 135%;
+    @include media-breakpoint-down(md) {
       display: block;
-
     }
   }
+
+  #project {
+    height: 100vh;
+    margin-left: 11vw;
+    p {
+        color: $fontcolor;
+        font-size: 2rem;
+        font-family: "Miniver";
+      }
+    .project-sec {
+      height: 50vh;
+      margin-top: 5rem;
+      display: flex;
+      justify-content: center;
+      align-items: end;
+      gap: 5rem;
+      .click{
+
+        h4 {
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-family: "Miniver";
+          font-size: 3rem;
+        }
+        .cover-dis{
+          height: 37.8rem;
+      width: 35rem;
+      background-color: rgba(8, 8, 8, 0.632);
+      position: absolute;
+     opacity: 1;
+     transition-duration: 1s;
+     color: snow;
+     z-index: 1;
+    
+  
+        }
+        a {
+          text-decoration: none;
+        }
+        
+        .card{
+          border: 4px double $fontcolor;
+          transition-duration: 1s;
+          .card-body{
+            background-color: $navbackground;
+            h5 {
+              font-size: 2rem;
+              color: $heading;
+              font-family: "Cookie";
+            }
+          }
+        }
+      }
+     
+    }
+    .click:hover .cover-dis{
+      opacity: 0;
+      cursor: pointer;
+    }
+    .click:hover .card{
+      transform:rotate(5deg) scale(0.9);
+        color: rgb(82, 24, 24);
+        transition-delay: .1s;
+    }
+
+  }
+
 }
+
+footer{
+  margin-left: 11vw;
+ 
+  h2 {
+    font-size: clamp(3rem, 6vw, 6rem);
+    margin: 0;
+    color: $heading;
+    font-family: "Kaushan Script";
+    text-transform: uppercase;
+    text-align: center;
+  }
+  #contact{
+    height: 100vh;
+    padding-top: 5rem;
+   .contact-sec{
+    display: flex;
+    justify-content: space-around;
+ align-items: end;
+    .form{
+      form{
+       
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        flex-direction: column;
+        gap: 0.5rem;
+        label{
+          color: $heading;
+          font-family: "Kaushan Script";
+          font-size: 3rem;
+        }
+        input, textarea{
+          width: 100%;
+          background-color: $backgroundColor;
+        }
+        input:focus,
+        textarea:focus{
+          outline-color: $heading;
+        }
+        button {
+          margin: 1rem;
+          padding: 1rem 2rem;
+          color: $heading;
+          font-size: 3rem;
+          font-family: "Kaushan Script";
+         border-radius: 50px;
+          border: none;
+          background-color: $headingbackground;
+          transition-duration: 1s;
+        }
+        button:hover{
+          transform: scale(1.1);
+          background-color: $centerborder;
+          cursor: pointer;
+        }
+      }
+    }
+    .contact-icon div {
+      height: 20rem;
+      width: 20rem;
+      margin: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      border-radius: 20px;
+      box-shadow: 0px 0px 20px grey;
+      h4{
+        color: $heading;
+          font-family: "Kaushan Script";
+          font-size: 2rem;
+      }
+      i{
+        font-size: 5rem;
+        color: $heading;
+      }
+    }
+    .icon:hover i{
+      color:$centerborder
+    }
+   }
+    
+  }
+  
+}
+
+.up{
+   
+  i{
+   position: sticky;
+   left: 3%;
+   bottom: 1%;
+   font-size: 4rem;
+   color: $heading;
+  }
+    
+     
+   }
 
 // -------------------------------------
