@@ -1,0 +1,233 @@
+// @import "base";
+// You need the base only when you are not using bootstrap. In that case, go to _base.scss
+// to customize it as you may want.
+
+@import "./variables";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+@import "./base";
+@import "./minmix";
+@import url("https://fonts.googleapis.com/css2?family=Cookie&family=Fredericka+the+Great&family=Kaushan+Script&family=Love+Ya+Like+A+Sister&family=Maven+Pro:wght@400;500;600;800;900&family=Miniver&family=Niconne&family=Rubik+Moonrocks&display=swap");
+
+// HOME PAGE
+header{
+  display: flex;
+  justify-content: space-between;
+  nav ul {
+    background-color: $navbackground;
+    display: flex;
+    padding: 0;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    width: 10vw;
+    @include media-breakpoint-down(md) { 
+      flex-direction: row;
+      height: 10vw;
+      width: 100%;
+     }
+    li {
+      list-style: none;
+  
+      a {
+        font-size: clamp(1rem, 4vw, 2.2rem);
+        color: gray;
+        font-family: "Miniver";
+        text-decoration: none;
+        transition-duration: .5s;
+      }
+    }
+    a:hover {
+      font-size: 2.4rem;
+      color: rgba(51, 2, 112, 0.765);
+      padding: 0.8rem;
+      border-radius: 50px;
+      box-shadow: 0px 0px 15px rgba(51, 2, 112, 0.765);
+    }
+  }
+  .sec-1 {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h1,
+    h2 {
+      margin: 0;
+      font-size: clamp(4rem, 6vw, 10rem);
+      color: $heading;
+      font-family: "Niconne";
+      text-align: center;
+      animation-duration: 2s;
+      animation-fill-mode: forwards;
+    }
+    span {
+      font-size: 4rem;
+    }
+    p {
+      font-family: "Miniver";
+      text-align: center;
+      font-size: clamp(2rem, 5vw, 4rem);
+    }
+  }
+  .link {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+    font-size: 10rem;
+    flex-direction: column;
+    margin-right: 5rem;
+    
+    i{
+      transition-duration: 1s;
+      animation: zoomout 5s infinite;
+      color: $heading;
+
+    }
+    i:hover{
+      color: grey;
+    }
+  }
+}
+@keyframes zoomout{
+0% {
+  transform: scale(0.8);
+}
+
+100%{
+  transform: scale(1.1);
+}
+}
+
+
+main {
+  p {
+    font-family: "Miniver";
+    text-align: center;
+    font-size: 2rem;
+    color: gray;
+  }
+  // Yusra's About Page
+  h3 {
+    font-size: clamp(2.8rem, 5vw, 5rem);
+    color: $heading;
+    text-align: center;
+    margin-top: 10rem;
+    font-family: "Cookie";
+    background-color: $headingbackground;
+    border-radius: 30px;
+    padding: 0;
+  }
+  #about {
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: start;
+    flex-direction: row;
+    padding-top: 5rem;
+
+    .info {
+      h2,
+      h3,
+      h4,
+      h5,
+      p,
+      .skill {
+        margin-left: 10vw;
+        text-align: center;
+      }
+
+      h2 {
+        font-size: clamp(3rem, 6vw, 6rem);
+        margin: 0;
+        color: $heading;
+        font-family: "Kaushan Script";
+        text-transform: uppercase;
+      }
+
+      h3::after {
+        content: "";
+        height: 20px;
+        width: 20px;
+        display: inline-block;
+        position: relative;
+        left: 60%;
+        border-radius: 50%;
+        background-color: $heading;
+      }
+
+      h4 {
+        color: $heading;
+        font-size: clamp(2.6rem, 5vw, 4rem);
+        margin-top: 2rem;
+        font-family: "Cookie";
+        span {
+          text-decoration: underline;
+        }
+      }
+      p {
+        color: gray;
+        font-size: 2rem;
+        font-family: "Miniver";
+      }
+      .skill-h {
+        margin: auto;
+      }
+      .skill {
+        width: 250px;
+        height: 20px;
+        border-radius: 50px;
+        position: relative;
+        left: 280px;
+        top: -30px;
+        background: linear-gradient(
+          90deg,
+          rgba(77, 2, 106, 0.913) 95%,
+
+          rgba(47, 2, 87, 0.414) 5%
+        );
+      }
+      .java {
+        background: linear-gradient(
+          90deg,
+          rgba(77, 2, 106, 0.913) 0%,
+          rgba(47, 2, 87, 0.626) 10%,
+          rgba(47, 2, 87, 0.414) 90%
+        );
+      }
+    }
+
+    .profile {
+      height: 35vh;
+
+      border: 5px double black;
+      padding-left: 1rem;
+      padding-bottom: 1rem;
+      border-top-left-radius: 50%;
+      border-top-right-radius: 50%;
+      img {
+        height: 100%;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        border: 2px solid rgb(10, 8, 8);
+      }
+    }
+  }
+  .about-me {
+    width: 30%;
+    margin: 0 auto;
+    text-align: justify;
+    position: absolute;
+    right: 100px;
+    top: 140%;
+    @include media-breakpoint-down(md){
+      display: block;
+
+    }
+  }
+}
+
+// -------------------------------------
