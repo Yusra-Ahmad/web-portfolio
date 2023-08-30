@@ -5,7 +5,7 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-@import url("https://fonts.googleapis.com/css2?family=Cookie&family=Fredericka+the+Great&family=Kaushan+Script&family=Love+Ya+Like+A+Sister&family=Maven+Pro:wght@400;500;600;800;900&family=Miniver&family=Niconne&family=Rubik+Moonrocks&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cookie&family=Fredericka+the+Great&family=Kalam:wght@300;400&family=Kaushan+Script&family=Love+Ya+Like+A+Sister&family=Maven+Pro:wght@400;500;600;800;900&family=Merienda:wght@300;400;500;600&family=Miniver&family=Niconne&family=Rubik+Moonrocks&display=swap");
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -10736,10 +10736,10 @@ header {
 }
 header nav ul {
   background-color: rgb(248, 223, 190);
-  display: flex;
   padding: 0;
-  align-items: center;
+  display: flex;
   justify-content: space-evenly;
+  align-items: center;
   flex-direction: column;
   position: fixed;
   height: 100vh;
@@ -10747,28 +10747,30 @@ header nav ul {
 }
 @media (max-width: 991.98px) {
   header nav ul {
-    flex-direction: row;
-    height: 10vw;
     width: 100%;
+    height: 10vw;
+    flex-direction: row;
   }
 }
 header nav ul li {
   list-style: none;
+  transition-duration: 1s;
 }
 header nav ul li a {
   font-size: clamp(1rem, 4vw, 2.2rem);
   color: gray;
   font-family: "Miniver";
   text-decoration: none;
-  transition-duration: 0.5s;
+  padding: 1.2rem;
 }
 header nav ul a:hover {
-  font-size: 2.4rem;
-  color: rgba(51, 2, 112, 0.765);
-  padding: 1.2rem;
+  color: rgba(99, 2, 134, 0.913);
   border-bottom: 3px solid rgba(99, 2, 134, 0.913);
   border-radius: 50px;
   box-shadow: 0px 0px 15px rgba(51, 2, 112, 0.765);
+}
+header nav ul li:hover {
+  transform: scale(1.1);
 }
 header .sec-1 {
   height: 100vh;
@@ -10780,43 +10782,45 @@ header .sec-1 {
 @media (max-width: 991.98px) {
   header .sec-1 {
     height: fit-content;
-    margin: 15rem 0;
+    width: 100%;
     justify-content: flex-start;
+    margin: 20rem 0;
   }
 }
 header .sec-1 h1, header .sec-1 .h1,
 header .sec-1 h2,
 header .sec-1 .h2 {
-  margin: 0;
-  font-size: clamp(4rem, 6vw, 10rem);
-  color: rgba(99, 2, 134, 0.913);
-  font-family: "Niconne";
   text-align: center;
+  font-family: "Niconne";
+  color: rgba(99, 2, 134, 0.913);
+  font-size: clamp(5rem, 6vw, 10rem);
   animation-duration: 2s;
   animation-fill-mode: forwards;
 }
 header .sec-1 span {
-  font-size: 4rem;
+  font-size: clamp(1rem, 6vw, 3.6rem);
 }
 header .sec-1 p {
-  font-family: "Miniver";
   text-align: center;
+  font-family: "Miniver";
+  margin-top: 2rem;
   font-size: clamp(2rem, 5vw, 4rem);
 }
 header .link {
   display: flex;
-  align-items: center;
   justify-content: space-evenly;
-  font-size: 10rem;
+  align-items: center;
   flex-direction: column;
+  font-size: 10rem;
   margin-right: 10rem;
 }
 @media (max-width: 991.98px) {
   header .link {
     flex-direction: row;
-    font-size: 5rem;
     align-items: center;
+    font-size: 5rem;
     margin-right: 0;
+    margin-bottom: 15rem;
   }
 }
 header .link i {
@@ -10850,9 +10854,9 @@ main h2, main .h2 {
   text-transform: uppercase;
 }
 main p {
-  font-family: "Miniver";
+  font-family: "Merienda";
   text-align: center;
-  font-size: 2.2rem;
+  font-size: clamp(1rem, 6vw, 2rem);
   color: rgb(64, 59, 59);
 }
 main h3, main .h3 {
@@ -10865,16 +10869,28 @@ main h3, main .h3 {
   border-radius: 30px;
   padding: 0;
 }
+@media (max-width: 991.98px) {
+  main h3, main .h3 {
+    margin-top: 0;
+  }
+}
 main #about {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-around;
   align-items: start;
-  flex-direction: row;
+  flex-wrap: wrap;
 }
 main #about .info {
   border-right: 2px solid rgba(186, 174, 174, 0.532);
-  padding-right: 6.9%;
+  padding-right: 5%;
+}
+@media (max-width: 991.98px) {
+  main #about .info {
+    border: none;
+    border-bottom: 2px solid rgba(186, 174, 174, 0.532);
+    padding-bottom: 5rem;
+    margin: 0 auto;
+  }
 }
 main #about .info h2, main #about .info .h2,
 main #about .info h3,
@@ -10888,15 +10904,18 @@ main #about .info .skill {
   margin-left: 10vw;
   text-align: center;
 }
-main #about .info .edu::after {
-  content: "";
-  height: 20px;
-  width: 20px;
-  display: block;
-  position: relative;
-  left: 115%;
-  border-radius: 50%;
-  background-color: rgba(99, 2, 134, 0.913);
+@media (max-width: 991.98px) {
+  main #about .info h2, main #about .info .h2,
+  main #about .info h3,
+  main #about .info .h3,
+  main #about .info h4,
+  main #about .info .h4,
+  main #about .info h5,
+  main #about .info .h5,
+  main #about .info p,
+  main #about .info .skill {
+    margin: 0 2rem;
+  }
 }
 main #about .info h4, main #about .info .h4 {
   color: rgba(99, 2, 134, 0.913);
@@ -10912,11 +10931,18 @@ main #about .info .skill-h {
 }
 main #about .profile {
   height: 35vh;
-  border: 5px double black;
-  padding-left: 1rem;
-  padding-bottom: 1rem;
+  margin-top: 2rem;
   border-top-left-radius: 50%;
   border-top-right-radius: 50%;
+  border: 2px solid rgb(10, 8, 8);
+  border: 7px double black;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+}
+@media (max-width: 1199.98px) {
+  main #about .profile {
+    margin: 5rem;
+  }
 }
 main #about .profile img {
   height: 100%;
@@ -10927,24 +10953,39 @@ main #about .profile img {
 main .about-me {
   width: 30%;
   margin: 0 auto;
+  margin-right: 5rem;
   text-align: justify;
   position: absolute;
-  right: 100px;
+  right: 1px;
   top: 135%;
 }
-@media (max-width: 767.98px) {
+main .about-me h3, main .about-me .h3 {
+  margin-top: 3rem;
+}
+@media (max-width: 1199.98px) {
+  main .about-me h3, main .about-me .h3 {
+    margin-top: 3rem;
+  }
+}
+@media (max-width: 1199.98px) {
   main .about-me {
-    display: block;
+    width: 70%;
+    margin: 0 auto;
+    position: static;
   }
 }
 main #project {
-  height: 100vh;
   margin-left: 11vw;
+}
+@media (max-width: 991.98px) {
+  main #project {
+    margin: 0 2rem;
+  }
 }
 main #project p {
   color: rgb(64, 59, 59);
   font-size: 2rem;
-  font-family: "Miniver";
+  font-family: "Merienda";
 }
 main #project .project-sec {
   height: 50vh;
@@ -10954,23 +10995,29 @@ main #project .project-sec {
   align-items: end;
   gap: 5rem;
 }
+@media (max-width: 1399.98px) {
+  main #project .project-sec {
+    height: fit-content;
+    flex-wrap: wrap;
+  }
+}
 main #project .project-sec .click h4, main #project .project-sec .click .h4 {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Miniver";
   font-size: 3rem;
+  font-family: "Miniver";
 }
 main #project .project-sec .click .cover-dis {
-  height: 37.8rem;
+  height: 41rem;
   width: 35rem;
+  color: snow;
   background-color: rgba(8, 8, 8, 0.632);
   position: absolute;
   opacity: 1;
-  transition-duration: 1s;
-  color: snow;
   z-index: 1;
+  transition-duration: 1s;
 }
 main #project .project-sec .click a {
   text-decoration: none;
@@ -10993,12 +11040,17 @@ main #project .click:hover .cover-dis {
 }
 main #project .click:hover .card {
   transform: rotate(5deg) scale(0.9);
-  color: rgb(82, 24, 24);
   transition-delay: 0.1s;
 }
 
 footer {
   margin-left: 11vw;
+  margin-top: 10vw;
+}
+@media (max-width: 991.98px) {
+  footer {
+    margin: 0 2rem;
+  }
 }
 footer h2, footer .h2 {
   font-size: clamp(3rem, 6vw, 6rem);
@@ -11010,17 +11062,23 @@ footer h2, footer .h2 {
 }
 footer #contact {
   height: 100vh;
-  padding-top: 5rem;
+  padding-top: 10rem;
 }
 footer #contact .contact-sec {
   display: flex;
-  justify-content: space-around;
-  align-items: end;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  flex-direction: row;
+}
+@media (max-width: 991.98px) {
+  footer #contact .contact-sec {
+    flex-wrap: wrap;
+  }
 }
 footer #contact .contact-sec .form form {
   display: flex;
   justify-content: center;
-  align-items: start;
   flex-direction: column;
   gap: 0.5rem;
 }
@@ -11029,7 +11087,11 @@ footer #contact .contact-sec .form form label {
   font-family: "Kaushan Script";
   font-size: 3rem;
 }
-footer #contact .contact-sec .form form input, footer #contact .contact-sec .form form textarea {
+footer #contact .contact-sec .form form input {
+  border-color: rgba(186, 174, 174, 0.532);
+}
+footer #contact .contact-sec .form form input,
+footer #contact .contact-sec .form form textarea {
   width: 100%;
   background-color: rgba(251, 239, 216, 0.721);
 }
@@ -11064,6 +11126,12 @@ footer #contact .contact-sec .contact-icon div {
   border-radius: 20px;
   box-shadow: 0px 0px 20px grey;
 }
+@media (max-width: 991.98px) {
+  footer #contact .contact-sec .contact-icon div {
+    height: 10rem;
+    width: 10rem;
+  }
+}
 footer #contact .contact-sec .contact-icon div h4, footer #contact .contact-sec .contact-icon div .h4 {
   color: rgba(99, 2, 134, 0.913);
   font-family: "Kaushan Script";
@@ -11072,6 +11140,11 @@ footer #contact .contact-sec .contact-icon div h4, footer #contact .contact-sec 
 footer #contact .contact-sec .contact-icon div i {
   font-size: 5rem;
   color: rgba(99, 2, 134, 0.913);
+}
+@media (max-width: 991.98px) {
+  footer #contact .contact-sec .contact-icon div i {
+    font-size: 3rem;
+  }
 }
 footer #contact .contact-sec .icon:hover i {
   color: rgba(186, 174, 174, 0.532);
@@ -11083,6 +11156,20 @@ footer #contact .contact-sec .icon:hover i {
   bottom: 1%;
   font-size: 4rem;
   color: rgba(99, 2, 134, 0.913);
+}
+
+@media (min-width: 1150px) and (max-width: 1402px) {
+  .profile {
+    margin-left: 10rem;
+  }
+}
+@media (min-width: 993px) and (max-width: 1185px) {
+  main #about .info {
+    border-right: none;
+    border-bottom: 2px solid rgba(186, 174, 174, 0.532);
+    padding-bottom: 5rem;
+    margin: 0 auto;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

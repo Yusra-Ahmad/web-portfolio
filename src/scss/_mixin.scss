@@ -1,0 +1,30 @@
+@mixin flexcenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexspaceeven {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+@mixin flexalignend{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    gap: 5rem;
+}
+
+@mixin topcurve {
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border: 2px solid rgb(10, 8, 8);
+}
+@mixin windowframe {
+  border: 7px double black;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+}

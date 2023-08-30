@@ -7,97 +7,106 @@
 
 @import "./base";
 @import "./mixin";
-@import url("https://fonts.googleapis.com/css2?family=Cookie&family=Fredericka+the+Great&family=Kaushan+Script&family=Love+Ya+Like+A+Sister&family=Maven+Pro:wght@400;500;600;800;900&family=Miniver&family=Niconne&family=Rubik+Moonrocks&display=swap");
-
-// HOME PAGE
+@import url("https://fonts.googleapis.com/css2?family=Cookie&family=Fredericka+the+Great&family=Kalam:wght@300;400&family=Kaushan+Script&family=Love+Ya+Like+A+Sister&family=Maven+Pro:wght@400;500;600;800;900&family=Merienda:wght@300;400;500;600&family=Miniver&family=Niconne&family=Rubik+Moonrocks&display=swap");
+// ---------------------------------------------
+// ----HOME PAGE----
 header {
   display: flex;
   justify-content: space-between;
-  @include media-breakpoint-down(lg){
+  @include media-breakpoint-down(lg) {
     flex-direction: column;
     justify-content: center;
   }
 
-
   nav ul {
     background-color: $navbackground;
-    display: flex;
     padding: 0;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-direction: column;
+    @include flexspaceeven();
+
     position: fixed;
+
     height: 100vh;
     width: 10vw;
+
     @include media-breakpoint-down(lg) {
-      flex-direction: row;
-      height: 10vw;
       width: 100%;
+      height: 10vw;
+
+      flex-direction: row;
     }
+
     li {
       list-style: none;
-
+      transition-duration: 1s;
       a {
         font-size: clamp(1rem, 4vw, 2.2rem);
         color: gray;
         font-family: "Miniver";
         text-decoration: none;
-        transition-duration: 0.5s;
+        padding: 1.2rem;
       }
     }
+
     a:hover {
-      font-size: 2.4rem;
-      color: rgba(51, 2, 112, 0.765);
-      padding: 1.2rem;
+      color: $heading;
       border-bottom: 3px solid $heading;
       border-radius: 50px;
       box-shadow: 0px 0px 15px rgba(51, 2, 112, 0.765);
     }
+    li:hover {
+      transform: scale(1.1);
+    }
   }
+  // --------------------------------------
+
+  // Main heading of home page
   .sec-1 {
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexcenter();
     flex-direction: column;
-    @include media-breakpoint-down(lg){
+    @include media-breakpoint-down(lg) {
       height: fit-content;
-      margin: 15rem 0;
+      width: 100%;
+
       justify-content: flex-start;
-  
+      margin: 20rem 0;
     }
+
     h1,
     h2 {
-      margin: 0;
-      font-size: clamp(4rem, 6vw, 10rem);
-      color: $heading;
-      font-family: "Niconne";
       text-align: center;
+
+      font-family: "Niconne";
+      color: $heading;
+      font-size: clamp(5rem, 6vw, 10rem);
+
       animation-duration: 2s;
       animation-fill-mode: forwards;
     }
     span {
-      font-size: 4rem;
+      font-size: clamp(1rem, 6vw, 3.6rem);
     }
     p {
-      font-family: "Miniver";
       text-align: center;
+
+      font-family: "Miniver";
+      margin-top: 2rem;
       font-size: clamp(2rem, 5vw, 4rem);
     }
   }
+
   .link {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+    @include flexspaceeven();
     font-size: 10rem;
-    flex-direction: column;
     margin-right: 10rem;
-    @include media-breakpoint-down(lg){
+
+    @include media-breakpoint-down(lg) {
       flex-direction: row;
-      font-size: 5rem;
       align-items: center;
+
+      font-size: 5rem;
       margin-right: 0;
-     
+      margin-bottom: 15rem;
     }
     i {
       transition-duration: 1s;
@@ -122,13 +131,13 @@ header {
     transform: scale(0.8);
   }
 }
+// -----------------------------------
+// -----------------------------------------
 
-
-
+// BASIC STYLE
 main {
   section {
     padding-top: 7rem;
-    
   }
   h2 {
     font-size: clamp(3rem, 6vw, 6rem);
@@ -138,12 +147,12 @@ main {
     text-transform: uppercase;
   }
   p {
-    font-family: "Miniver";
+    font-family: "Merienda";
     text-align: center;
-    font-size: 2.2rem;
+    font-size: clamp(1rem, 6vw, 2rem);
     color: $fontcolor;
   }
-  // Yusra's About Page
+ 
   h3 {
     font-size: clamp(2.8rem, 5vw, 5rem);
     color: $heading;
@@ -153,18 +162,30 @@ main {
     background-color: $headingbackground;
     border-radius: 30px;
     padding: 0;
+    @include media-breakpoint-down(lg) {
+      margin-top: 0;
+    }
   }
+// -------------------------------------
+  // ---ABOUT PAGE-----
   #about {
-    
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-around;
     align-items: start;
-    flex-direction: row;
-
+    flex-wrap: wrap;
+   
+//EDUCATION SIDE CONTAINER
     .info {
       border-right: 2px solid $centerborder;
-      padding-right: 6.9%;
+      padding-right: 5%;
+
+      @include media-breakpoint-down(lg) {
+        border: none;
+        border-bottom: 2px solid $centerborder;
+        padding-bottom: 5rem;
+        margin: 0 auto;
+      }
+
       h2,
       h3,
       h4,
@@ -173,17 +194,9 @@ main {
       .skill {
         margin-left: 10vw;
         text-align: center;
-      }
-
-      .edu::after {
-        content: "";
-        height: 20px;
-        width: 20px;
-        display: block;
-        position: relative;
-        left: 115%;
-        border-radius: 50%;
-        background-color: $heading;
+        @include media-breakpoint-down(lg) {
+          margin: 0 2rem;
+        }
       }
 
       h4 {
@@ -195,86 +208,102 @@ main {
           text-decoration: underline;
         }
       }
-      
       .skill-h {
         text-align: center;
       }
-      
     }
 
+// PROFILE CONTAINER
     .profile {
       height: 35vh;
+ 
+      margin-top: 2rem;
+      @include topcurve();
+      @include windowframe();
+      @include media-breakpoint-down(xl) {
+        margin: 5rem;
+      }
 
-      border: 5px double black;
-      padding-left: 1rem;
-      padding-bottom: 1rem;
-      border-top-left-radius: 50%;
-      border-top-right-radius: 50%;
       img {
         height: 100%;
-        border-top-left-radius: 50%;
-        border-top-right-radius: 50%;
-        border: 2px solid rgb(10, 8, 8);
+       @include topcurve();
       }
     }
   }
   .about-me {
     width: 30%;
     margin: 0 auto;
+    margin-right: 5rem;
     text-align: justify;
+
     position: absolute;
-    right: 100px;
+    right: 1px;
     top: 135%;
-    @include media-breakpoint-down(md) {
-      display: block;
+
+    h3 {
+      margin-top: 3rem;
+      @include media-breakpoint-down(xl) {
+        margin-top: 3rem;
+      }
+    }
+    @include media-breakpoint-down(xl) {
+      width: 70%;
+      margin: 0 auto;
+      position: static;
     }
   }
 
+  // -------------------------------
+// ----PROJECT PAGE-----
   #project {
-    height: 100vh;
     margin-left: 11vw;
+    @include media-breakpoint-down(lg) {
+      margin: 0 2rem;
+    }
     p {
-        color: $fontcolor;
-        font-size: 2rem;
-        font-family: "Miniver";
-      }
+      color: $fontcolor;
+      font-size: 2rem;
+      font-family: "Merienda";
+    }
+
+    // Container for cards
     .project-sec {
       height: 50vh;
       margin-top: 5rem;
-      display: flex;
-      justify-content: center;
-      align-items: end;
-      gap: 5rem;
-      .click{
+      @include flexalignend();
 
+      @include media-breakpoint-down(xxl) {
+        height: fit-content;
+        flex-wrap: wrap;
+      }
+
+      .click {
         h4 {
           height: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          font-family: "Miniver";
+          @include flexcenter();
           font-size: 3rem;
+          font-family: "Miniver";
         }
-        .cover-dis{
-          height: 37.8rem;
-      width: 35rem;
-      background-color: rgba(8, 8, 8, 0.632);
-      position: absolute;
-     opacity: 1;
-     transition-duration: 1s;
-     color: snow;
-     z-index: 1;
-    
-  
+        // cover over card
+        .cover-dis {
+          height: 41rem;
+          width: 35rem;
+          
+          color: snow;
+          background-color: rgba(8, 8, 8, 0.632);
+          position: absolute;
+          opacity: 1;
+          z-index: 1;
+          transition-duration: 1s;
         }
         a {
           text-decoration: none;
         }
-        
-        .card{
+
+        .card {
           border: 4px double $fontcolor;
           transition-duration: 1s;
-          .card-body{
+          .card-body {
             background-color: $navbackground;
             h5 {
               font-size: 2rem;
@@ -284,25 +313,28 @@ main {
           }
         }
       }
-     
     }
-    .click:hover .cover-dis{
+    .click:hover .cover-dis {
       opacity: 0;
       cursor: pointer;
     }
-    .click:hover .card{
-      transform:rotate(5deg) scale(0.9);
-        color: rgb(82, 24, 24);
-        transition-delay: .1s;
+    .click:hover .card {
+      transform: rotate(5deg) scale(0.9);
+      transition-delay: 0.1s;
     }
-
   }
-
 }
 
-footer{
+// -------------------------------------
+// ----CONTACT PAGE-----
+
+// basic style
+footer {
   margin-left: 11vw;
- 
+  margin-top: 10vw;
+  @include media-breakpoint-down(lg) {
+    margin: 0 2rem;
+  }
   h2 {
     font-size: clamp(3rem, 6vw, 6rem);
     margin: 0;
@@ -311,92 +343,125 @@ footer{
     text-transform: uppercase;
     text-align: center;
   }
-  #contact{
+  #contact {
     height: 100vh;
-    padding-top: 5rem;
-   .contact-sec{
-    display: flex;
-    justify-content: space-around;
- align-items: end;
-    .form{
-      form{
-       
-        display: flex;
-        justify-content: center;
-        align-items: start;
-        flex-direction: column;
-        gap: 0.5rem;
-        label{
-          color: $heading;
-          font-family: "Kaushan Script";
-          font-size: 3rem;
-        }
-        input, textarea{
-          width: 100%;
-          background-color: $backgroundColor;
-        }
-        input:focus,
-        textarea:focus{
-          outline-color: $heading;
-        }
-        button {
-          margin: 1rem;
-          padding: 1rem 2rem;
-          color: $heading;
-          font-size: 3rem;
-          font-family: "Kaushan Script";
-         border-radius: 50px;
-          border: none;
-          background-color: $headingbackground;
-          transition-duration: 1s;
-        }
-        button:hover{
-          transform: scale(1.1);
-          background-color: $centerborder;
-          cursor: pointer;
+    padding-top: 10rem;
+    .contact-sec {
+      @include flexspaceeven();
+      flex-direction: row;
+      @include media-breakpoint-down(lg) {
+        flex-wrap: wrap;
+      }
+      .form {
+        form {
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          gap: 0.5rem;
+          label {
+            color: $heading;
+            font-family: "Kaushan Script";
+            font-size: 3rem;
+          }
+          input {
+            border-color: $centerborder;
+          }
+          input,
+          textarea {
+            width: 100%;
+            background-color: $backgroundColor;
+          }
+          input:focus,
+          textarea:focus {
+            outline-color: $heading;
+          }
+          button {
+            margin: 1rem;
+            padding: 1rem 2rem;
+            color: $heading;
+            font-size: 3rem;
+            font-family: "Kaushan Script";
+            border-radius: 50px;
+            border: none;
+            background-color: $headingbackground;
+            transition-duration: 1s;
+          }
+          button:hover {
+            transform: scale(1.1);
+            background-color: $centerborder;
+            cursor: pointer;
+          }
         }
       }
-    }
-    .contact-icon div {
-      height: 20rem;
-      width: 20rem;
-      margin: 2rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      border-radius: 20px;
-      box-shadow: 0px 0px 20px grey;
-      h4{
-        color: $heading;
+      // contantact container box
+      .contact-icon div {
+        height: 20rem;
+        width: 20rem;
+        margin: 2rem;
+        @include flexcenter();
+        flex-direction: column;
+        border-radius: 20px;
+        box-shadow: 0px 0px 20px grey;
+        @include media-breakpoint-down(lg) {
+          height: 10rem;
+          width: 10rem;
+        }
+
+        h4 {
+          color: $heading;
           font-family: "Kaushan Script";
           font-size: 2rem;
+        }
+        i {
+          font-size: 5rem;
+          color: $heading;
+          @include media-breakpoint-down(lg) {
+            font-size: 3rem;
+          }
+        }
       }
-      i{
-        font-size: 5rem;
-        color: $heading;
+      .icon:hover i {
+        color: $centerborder;
       }
     }
-    .icon:hover i{
-      color:$centerborder
-    }
-   }
-    
   }
-  
+}
+// -------------------------------------------------
+
+
+// --arrow Icon for bringing the Page up
+.up {
+  i {
+    position: sticky;
+    left: 3%;
+    bottom: 1%;
+    font-size: 4rem;
+    color: $heading;
+  }
 }
 
-.up{
-   
-  i{
-   position: sticky;
-   left: 3%;
-   bottom: 1%;
-   font-size: 4rem;
-   color: $heading;
-  }
-    
-     
-   }
 
-// -------------------------------------
+// ----------------------------------------------------
+// Responsive Screen
+
+@media (min-width: 1150px) and (max-width: 1402px) {
+  .profile {
+    margin-left: 10rem;
+  }
+}
+
+@media (min-width: 993px) and (max-width: 1185px) {
+  main {
+    #about {
+      .info {
+        border-right: none;
+        border-bottom: 2px solid $centerborder;
+        padding-bottom: 5rem;
+        margin: 0 auto;
+      }
+     
+    }
+  }
+}
+
+// ------------------------------------------------------------
