@@ -6,7 +6,7 @@
 ⬇️ link below and visit my **WEB PORTFOLIO** 🖥️
 
 
-[💻 Click on page](https://yusra-ahmad.github.io/Web-dev-orientation-final-project/)
+[💻 Click on page](https://yusra-ahmad.github.io/web-portfolio/)
 ## 👩‍💻 Workings
 - HTML
 - CSS
