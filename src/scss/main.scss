@@ -375,11 +375,18 @@ footer {
           }
           input {
             border-color: $centerborder;
+           
           }
           input,
           textarea {
             width: 100%;
             background-color: $backgroundColor;
+            padding: 0.5rem;
+            padding-left: 1.4rem;
+          }
+          ::placeholder,
+          textarea::placeholder{
+            font-family: "Merienda";
           }
           input:focus,
           textarea:focus {

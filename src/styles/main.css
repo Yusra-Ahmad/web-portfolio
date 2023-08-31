@@ -11103,6 +11103,12 @@ footer #contact .contact-sec .form form input,
 footer #contact .contact-sec .form form textarea {
   width: 100%;
   background-color: rgba(251, 239, 216, 0.721);
+  padding: 0.5rem;
+  padding-left: 1.4rem;
+}
+footer #contact .contact-sec .form form ::placeholder,
+footer #contact .contact-sec .form form textarea::placeholder {
+  font-family: "Merienda";
 }
 footer #contact .contact-sec .form form input:focus,
 footer #contact .contact-sec .form form textarea:focus {
