@@ -11195,7 +11195,7 @@ footer #contact .contact-sec .icon:hover i {
     margin: 0 auto;
   }
 }
-@media (min-width: 1117px) and (max-width: 1190px) {
+@media (min-width: 1100px) and (max-width: 1190px) {
   main #about .info {
     border: none;
   }
