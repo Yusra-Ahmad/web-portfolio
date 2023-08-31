@@ -1,5 +1,6 @@
 # Web-Portfolio
->This my web portfolio with my info and small projects of html and css with scss. 
+>Elegantly showcasing my journey through clean HTML and SCSS craftsmanship, my web portfolio invites you to explore my creative evolution in a visual symphony of code and design. Welcome to a world where pixels and passion converge.
+ 
 ![preview](HOMESCREEN.jpeg)
 
 ⬇️ link below and visit my **WEB PORTFOLIO** 🖥️
