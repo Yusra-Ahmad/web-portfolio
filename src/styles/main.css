@@ -10803,7 +10803,7 @@ header .sec-1 span {
 }
 header .sec-1 p {
   text-align: center;
-  font-family: "Miniver";
+  font-family: "Merienda";
   margin-top: 2rem;
   font-size: clamp(2rem, 5vw, 4rem);
 }
@@ -11022,12 +11022,12 @@ main #project .project-sec .click h4, main #project .project-sec .click .h4 {
 main #project .project-sec .click .cover-dis {
   height: 41rem;
   width: 35rem;
-  color: snow;
-  background-color: rgba(8, 8, 8, 0.632);
+  color: black;
+  background-color: rgba(250, 225, 163, 0.552);
   position: absolute;
   opacity: 1;
   z-index: 1;
-  transition-duration: 1s;
+  transition-duration: 0.5s;
 }
 main #project .project-sec .click a {
   text-decoration: none;
