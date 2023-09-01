@@ -11109,6 +11109,9 @@ footer #contact .contact-sec .form form label {
   font-family: "Kaushan Script";
   font-size: 3rem;
 }
+footer #contact .contact-sec .form form label span {
+  color: rgba(186, 174, 174, 0.532);
+}
 footer #contact .contact-sec .form form input {
   border-color: rgba(186, 174, 174, 0.532);
 }

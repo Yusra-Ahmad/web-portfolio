@@ -391,6 +391,9 @@ footer {
             color: $heading;
             font-family: "Kaushan Script";
             font-size: 3rem;
+            span{
+              color: $centerborder;
+            }
           }
           input {
             border-color: $centerborder;
@@ -443,8 +446,6 @@ footer {
         @include media-breakpoint-down(xl) {
           height: 10rem;
           width: 10rem;
-        
-          
         }
 
        
