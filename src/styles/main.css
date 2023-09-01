@@ -10847,14 +10847,14 @@ header .link i:hover {
 }
 @keyframes lighting {
   0% {
-    color: rgba(213, 209, 209, 0.732);
+    color: rgba(213, 209, 209, 0.955);
   }
-  90% {
+  60% {
     color: rgba(99, 2, 134, 0.913);
   }
   100% {
-    color: rgba(213, 209, 209, 0.732);
-    text-shadow: 0px 0px 22px grey;
+    color: rgba(213, 209, 209, 0.955);
+    text-shadow: 0px 0px 22px snow;
   }
 }
 .main-footer {
