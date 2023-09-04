@@ -11015,13 +11015,15 @@ main #project p {
   font-family: "Merienda";
 }
 main #project .project-sec {
-  height: 50vh;
-  margin-top: 6rem;
+  height: 70vh;
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: center;
   gap: 5rem;
   flex-wrap: wrap;
+}
+main #project .project-sec h2, main #project .project-sec .h2 {
+  margin-bottom: 5rem;
 }
 @media (max-width: 1399.98px) {
   main #project .project-sec {
@@ -11081,7 +11083,7 @@ footer {
 }
 footer h2, footer .h2 {
   font-size: clamp(3rem, 6vw, 6rem);
-  margin: 0;
+  margin-top: 5rem;
   color: rgba(99, 2, 134, 0.913);
   font-family: "Kaushan Script";
   text-transform: uppercase;
@@ -11089,7 +11091,7 @@ footer h2, footer .h2 {
 }
 footer #contact {
   height: 100vh;
-  padding-top: 10rem;
+  padding-top: 8rem;
 }
 footer #contact .contact-sec {
   display: flex;
@@ -11188,11 +11190,16 @@ footer #contact .contact-sec .contact-icon div i {
 footer #contact .contact-sec .icon:hover i {
   color: rgba(186, 174, 174, 0.532);
 }
+@media (max-width: 767.98px) {
+  footer #contact .contact-icon-container {
+    height: 100%;
+  }
+}
 
 .up i {
   position: sticky;
   left: 12%;
-  bottom: 2%;
+  bottom: 1%;
   font-size: 5rem;
   color: rgba(99, 2, 134, 0.913);
   z-index: 1;

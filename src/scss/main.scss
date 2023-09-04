@@ -305,9 +305,13 @@ main {
 
     // Container for cards
     .project-sec {
-      height: 50vh;
-      margin-top: 6rem;
-      @include flexalignend();
+      height: 70vh;
+     h2{
+      margin-bottom: 5rem;
+     }
+      
+      @include flexcenter();
+      gap: 5rem;
       flex-wrap: wrap;
 
       @include media-breakpoint-down(xxl) {
@@ -374,7 +378,7 @@ footer {
   }
   h2 {
     font-size: clamp(3rem, 6vw, 6rem);
-    margin: 0;
+    margin-top: 5rem;
     color: $heading;
     font-family: "Kaushan Script";
     text-transform: uppercase;
@@ -382,7 +386,7 @@ footer {
   }
   #contact {
     height: 100vh;
-    padding-top: 10rem;
+    padding-top: 8rem;
     .contact-sec {
       @include flexspaceeven();
       flex-direction: row;
@@ -454,6 +458,7 @@ footer {
         @include media-breakpoint-down(xl) {
           height: 10rem;
           width: 10rem;
+
         }
 
        
@@ -474,6 +479,11 @@ footer {
         color: $centerborder;
       }
     }
+    .contact-icon-container{
+      @include media-breakpoint-down(md){
+        height: 100%;
+      }
+    }
   }
 }
 // -------------------------------------------------
@@ -483,7 +493,7 @@ footer {
   i {
     position: sticky;
     left: 12%;
-    bottom: 2%;
+   bottom: 1%;
     font-size: 5rem;
     color: $heading;
     z-index: 1;
