@@ -11021,11 +11021,11 @@ main #project .project-sec {
   justify-content: center;
   align-items: end;
   gap: 5rem;
+  flex-wrap: wrap;
 }
 @media (max-width: 1399.98px) {
   main #project .project-sec {
     height: fit-content;
-    flex-wrap: wrap;
   }
 }
 main #project .project-sec .click h4, main #project .project-sec .click .h4 {

@@ -308,10 +308,10 @@ main {
       height: 50vh;
       margin-top: 6rem;
       @include flexalignend();
+      flex-wrap: wrap;
 
       @include media-breakpoint-down(xxl) {
         height: fit-content;
-        flex-wrap: wrap;
       }
 
       .click {
