@@ -81,7 +81,8 @@ header {
       color: $heading;
       font-size: clamp(5rem, 6vw, 10rem);
 
-      animation-duration: 2s;
+      animation-duration: 2.5s;
+      animation-delay: 0.7s;
       animation-fill-mode: forwards;
     }
     span {
@@ -234,8 +235,7 @@ main {
       
         font-family: "Cookie";
         i{
-          padding: 1rem;
-          padding-bottom: 10rem;
+          padding: 5rem 2rem;
          
         }
         span {

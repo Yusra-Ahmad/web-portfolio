@@ -10795,7 +10795,8 @@ header .sec-1 .h2 {
   font-family: "Niconne";
   color: rgba(99, 2, 134, 0.913);
   font-size: clamp(5rem, 6vw, 10rem);
-  animation-duration: 2s;
+  animation-duration: 2.5s;
+  animation-delay: 0.7s;
   animation-fill-mode: forwards;
 }
 header .sec-1 span {
@@ -10946,8 +10947,7 @@ main #about .info h4, main #about .info .h4 {
   font-family: "Cookie";
 }
 main #about .info h4 i, main #about .info .h4 i {
-  padding: 1rem;
-  padding-bottom: 10rem;
+  padding: 5rem 2rem;
 }
 main #about .info h4 span, main #about .info .h4 span {
   text-decoration: underline;
