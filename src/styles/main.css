@@ -10941,9 +10941,13 @@ main #about .info .skill {
 }
 main #about .info h4, main #about .info .h4 {
   color: rgba(99, 2, 134, 0.913);
-  font-size: clamp(2.6rem, 5vw, 4rem);
+  font-size: clamp(3.8rem, 5vw, 4rem);
   margin-top: 2rem;
   font-family: "Cookie";
+}
+main #about .info h4 i, main #about .info .h4 i {
+  padding: 1rem;
+  padding-bottom: 10rem;
 }
 main #about .info h4 span, main #about .info .h4 span {
   text-decoration: underline;
@@ -10984,7 +10988,7 @@ main .about-me {
 main .about-me h3, main .about-me .h3 {
   margin-top: 3rem;
 }
-@media (max-width: 1199.98px) {
+@media (max-width: 1399.98px) {
   main .about-me h3, main .about-me .h3 {
     margin-top: 0.5rem;
   }
@@ -11201,7 +11205,9 @@ footer #contact .contact-sec .icon:hover i {
 
 @media (min-width: 1200px) and (max-width: 1396px) {
   main .about-me {
-    margin-right: 0.5rem;
+    margin: 0 auto;
+    position: static;
+    width: 60%;
   }
   main .about-me p {
     font-size: 1.9rem;
@@ -11211,9 +11217,10 @@ footer #contact .contact-sec .icon:hover i {
   main .profile {
     margin-left: 10rem;
     margin-top: 0;
+    margin-right: 5rem;
   }
 }
-@media (min-width: 993px) and (max-width: 1185px) {
+@media (min-width: 993px) and (max-width: 1140px) {
   main #about .info {
     border-right: none;
     border-bottom: 2px solid rgba(186, 174, 174, 0.532);
@@ -11221,9 +11228,16 @@ footer #contact .contact-sec .icon:hover i {
     margin: 0 auto;
   }
 }
-@media (min-width: 1080px) and (max-width: 1190px) {
+@media (min-width: 1143px) and (max-width: 1174px) {
   main #about .info {
-    border: none;
+    border-right: 2px solid rgba(186, 174, 174, 0.532);
+    border-bottom: none;
+  }
+}
+@media (min-width: 1175px) and (max-width: 1324px) {
+  main #about .info {
+    border-right: 2px solid rgba(186, 174, 174, 0.532);
+    border-bottom: none;
   }
 }
 

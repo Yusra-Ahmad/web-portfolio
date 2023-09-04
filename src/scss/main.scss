@@ -229,9 +229,15 @@ main {
 
       h4 {
         color: $heading;
-        font-size: clamp(2.6rem, 5vw, 4rem);
+        font-size: clamp(3.8rem, 5vw, 4rem);
         margin-top: 2rem;
+      
         font-family: "Cookie";
+        i{
+          padding: 1rem;
+          padding-bottom: 10rem;
+         
+        }
         span {
           text-decoration: underline;
         }
@@ -269,7 +275,7 @@ main {
 
     h3 {
       margin-top: 3rem;
-      @include media-breakpoint-down(xl) {
+      @include media-breakpoint-down(xxl) {
         margin-top: 0.5rem;
       }
     }
@@ -279,6 +285,7 @@ main {
       padding-top: 0.5rem;
       position: static;
     }
+   
   }
 
   // -------------------------------
@@ -492,7 +499,10 @@ footer {
 @media (min-width: 1200px) and (max-width: 1396px) {
   main {
     .about-me {
-      margin-right: 0.5rem;
+      // margin-right: 0.5rem;
+      margin: 0 auto ;
+      position: static;
+      width: 60%;
       p {
         font-size: 1.9rem;
       }
@@ -505,11 +515,12 @@ footer {
     .profile {
       margin-left: 10rem;
       margin-top: 0;
+      margin-right: 5rem;
     }
   }
 }
 
-@media (min-width: 993px) and (max-width: 1185px) {
+@media (min-width: 993px) and (max-width: 1140px) {
   main {
     #about {
       .info {
@@ -521,11 +532,22 @@ footer {
     }
   }
 }
-@media (min-width: 1080px) and (max-width: 1190px) {
+@media (min-width: 1143px) and (max-width: 1174px) {
   main {
     #about {
       .info {
-        border: none;
+        border-right:  2px solid $centerborder;
+        border-bottom: none;
+      }
+    }
+}
+}
+@media (min-width: 1175px) and (max-width: 1324px) {
+  main {
+    #about {
+      .info {
+        border-right:  2px solid $centerborder;
+        border-bottom: none;
       }
     }
   }
